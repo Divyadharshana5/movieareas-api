@@ -8,18 +8,6 @@ app.get("/", (req, res) => {
 
 //CRUD functionality of movies
 
-//R-For Read
-app.get("/movies", () => {});
-
-//C-For Create
-app.post("/movies", () => {});
-
-//U-For Update
-app.put("/movies/:id", () => {});
-
-//D-For Delete
-app.delete("/movies/:id", () => {});
-
 app.listen(5000, () => {
   console.log(`The server is running at http://localhost:${PORT}`);
 });
