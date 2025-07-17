@@ -2,13 +2,13 @@ import express from "express";
 const router = express.Router();
 
 //R-For Read
-app.get("/movies", () => {});
+router.get("/movies", () => {});
 
 //C-For Create
-app.post("/movies", () => {});
+router.post("/movies", () => {});
 
 //U-For Update
-app.put("/movies/:id", () => {});
+router.put("/movies/:id", () => {});
 
 //D-For Delete
-app.delete("/movies/:id", () => {});
+router.delete("/movies/:id", () => {});
