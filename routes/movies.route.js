@@ -12,3 +12,5 @@ router.put("/movies/:id", () => {});
 
 //D-For Delete
 router.delete("/movies/:id", () => {});
+
+export default router;
