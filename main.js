@@ -9,9 +9,7 @@ app.get("/", (req, res) => {
 //CRUD functionality of movies
 
 //R-For Read
-app.get("/movies", () => {
-  res.json({ msg: "List of movies" });
-});
+app.get("/movies", () => {});
 
 //C-For Create
 app.post("/movies", () => {});
