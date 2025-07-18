@@ -7,6 +7,8 @@ export const MovieCreate = (req, res) => {
 
   console.log(req.body);
 
+  //Validate your data.
+
   return res.json(req.body);
 
   // create the movie info.
