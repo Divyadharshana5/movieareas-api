@@ -6,6 +6,7 @@ const PORT = 5000;
 
 //Data parsing middleware
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 //Connect DB
 connectDB();
