@@ -2,9 +2,7 @@ import express from "express";
 const router = express.Router();
 
 //R-For Read
-router.get("/", (req, res) => {
-  res.send("Get all movies");
-});
+router.get("/");
 
 //C-For Create
 router.post("/", (req, res) => {
