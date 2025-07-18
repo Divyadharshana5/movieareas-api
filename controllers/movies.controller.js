@@ -2,7 +2,7 @@ export const MovieIndex = (req, res) => {
   res.send("Get all movies");
 };
 
-export const MovieCreate = (req, res) => {
+export const MovieCreate = async (req, res) => {
   // id,title,desc
 
   console.log(req.body);
@@ -14,7 +14,7 @@ export const MovieCreate = (req, res) => {
     desc: req.body.desc,
   });
 
-  newMovie.save();
+  await newMovie.save();
 
   return res.json(req.body);
 
