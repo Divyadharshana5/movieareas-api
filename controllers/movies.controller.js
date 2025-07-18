@@ -9,10 +9,12 @@ export const MovieCreate = (req, res) => {
 
   //Validate your data.
 
-  new Movie({
+  const newMovie = new Movie({
     title: req.body.title,
     desc: req.body.desc,
   });
+
+  newMovie.save();
 
   return res.json(req.body);
 
