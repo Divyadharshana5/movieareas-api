@@ -14,7 +14,10 @@ export const MovieCreate = async (req, res) => {
     desc: req.body.desc,
   });
 
-  await newMovie.save();
+  //Successfull or error
+  try {
+    const movie = await newMovie.save();
+  } catch (error) {}
 
   return res.json(req.body);
 
