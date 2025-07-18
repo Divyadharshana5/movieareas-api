@@ -1,3 +1,6 @@
 import { Schema } from "mongoose";
 
-new Schema();
+const schema = new Schema({
+  title: String,
+  desc: String,
+});
