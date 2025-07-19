@@ -30,6 +30,9 @@ export const MovieCreate = async (req, res) => {
 export const MovieUpdate = async (req, res) => {
   try {
     const movie = await Movie.findById(res.params.id);
+
+    if (movie == null) {
+    }
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
