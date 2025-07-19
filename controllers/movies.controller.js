@@ -28,7 +28,11 @@ export const MovieCreate = async (req, res) => {
 };
 
 export const MovieUpdate = (req, res) => {
-  res.send("updates movies");
+  try {
+    Movie.findById();
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
 export const MovieDelete = (req, res) => {
