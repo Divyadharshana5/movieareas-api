@@ -4,7 +4,9 @@ export const MovieIndex = async (req, res) => {
   try {
     const movies = await Movie.find();
     res.json(movies);
-  } catch (error) {}
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
 export const MovieCreate = async (req, res) => {
