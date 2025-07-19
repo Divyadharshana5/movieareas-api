@@ -41,7 +41,12 @@ export const MovieDetail = async (req, res) => {
   }
 };
 
-export const MovieUpdate = async (req, res) => {};
+export const MovieUpdate = async (req, res) => {
+  //Valoidate the user input
+  if (req.body.title != null) {
+    res.movie;
+  }
+};
 
 export const MovieDelete = (req, res) => {
   res.send("Delete all movies");
