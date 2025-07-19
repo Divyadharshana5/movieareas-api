@@ -49,6 +49,9 @@ export const MovieUpdate = async (req, res) => {
   if (req.body.desc != null) {
     res.movie.desc = req.body.desc;
   }
+
+  try {
+  } catch (error) {}
 };
 
 export const MovieDelete = (req, res) => {
