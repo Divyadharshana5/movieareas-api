@@ -32,6 +32,9 @@ export const MovieUpdate = async (req, res) => {
     const movie = await Movie.findById(res.params.id);
 
     if (movie == null) {
+      return res.status(404).json({ message: "Movie not found" });
+    } else {
+      res.json(movie);
     }
   } catch (error) {
     res.status(500).json({ message: error.message });
