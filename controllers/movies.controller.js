@@ -51,6 +51,7 @@ export const MovieUpdate = async (req, res) => {
   }
 
   try {
+    const updatedMovie = await res.movie.save();
   } catch (error) {}
 };
 
