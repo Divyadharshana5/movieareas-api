@@ -27,9 +27,9 @@ export const MovieCreate = async (req, res) => {
   }
 };
 
-export const MovieUpdate = (req, res) => {
+export const MovieUpdate = async (req, res) => {
   try {
-    Movie.findById();
+    await Movie.findById(res.params.id);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
