@@ -29,7 +29,7 @@ export const MovieCreate = async (req, res) => {
 
 export const MovieDetail = async (req, res) => {
   try {
-    const movie = await Movie.findById(res.params.id);
+    const movie = await Movie.findById(req.params.id);
 
     if (movie == null) {
       return res.status(404).json({ message: "Movie not found" });
