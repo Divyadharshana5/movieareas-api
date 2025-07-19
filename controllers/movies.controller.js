@@ -52,7 +52,10 @@ export const MovieUpdate = async (req, res) => {
 
   try {
     const updatedMovie = await res.movie.save();
-  } catch (error) {}
+    res.json(updatedMovie);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
 };
 
 export const MovieDelete = (req, res) => {
