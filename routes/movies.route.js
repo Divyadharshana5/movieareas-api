@@ -10,6 +10,8 @@ const router = express.Router();
 //R-For Read
 router.get("/", MovieIndex);
 
+router.get("/:id", MovieIndex);
+
 //C-For Create
 router.post("/", MovieCreate);
 
