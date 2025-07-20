@@ -62,6 +62,9 @@ export const MovieUpdate = async (req, res) => {
 export const MovieDelete = (req, res) => {
   const movieId = req.params.id;
 
-  Movie.findOne({ _id: movieId });
+  const foundMovie = Movie.findOne({ _id: movieId });
+
+  try {
+  } catch (error) {}
   res.send("Delete all movies");
 };
