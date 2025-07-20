@@ -48,6 +48,9 @@ export const MovieUpdate = async (req, res) => {
       {
         title: req.body.title,
         desc: req.body.desc,
+      },
+      {
+        upsert: true,
       }
     );
     res.status(200).json(result);
