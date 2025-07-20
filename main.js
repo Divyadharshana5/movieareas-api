@@ -1,8 +1,11 @@
 import express from "express";
 import movieRoutes from "./routes/movies.route.js";
 import connectDB from "./lib/db.js";
+import dotenv from "dotenv";
 const app = express();
 const PORT = 5000;
+
+dotenv.config();
 
 //Data parsing middleware
 app.use(express.json());
@@ -19,8 +22,10 @@ app.get("/", (req, res) => {
 // CLIENT -> MIDDLEWARE -> SERVER
 app.use("/movies", movieRoutes);
 
-app.listen(5000, () => {
-  console.log(`The server is running at http://localhost:${PORT}`);
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`✅ Server is running at http://localhost:${PORT}`);
+  });
 });
 
 //Dry Principle: Don't Repeat Yourself
