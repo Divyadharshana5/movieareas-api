@@ -66,8 +66,8 @@ export const MovieDelete = async (req, res) => {
 
   try {
     await foundMovie.remove();
+    res.json({ message: "Movie deleted successfully" });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-  res.send("Delete all movies");
 };
