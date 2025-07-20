@@ -65,6 +65,8 @@ export const MovieDelete = (req, res) => {
   const foundMovie = Movie.findOne({ _id: movieId });
 
   try {
-  } catch (error) {}
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
   res.send("Delete all movies");
 };
