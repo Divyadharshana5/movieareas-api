@@ -59,12 +59,13 @@ export const MovieUpdate = async (req, res) => {
   }
 };
 
-export const MovieDelete = (req, res) => {
+export const MovieDelete = async (req, res) => {
   const movieId = req.params.id;
 
   const foundMovie = Movie.findOne({ _id: movieId });
 
   try {
+    await foundMovie.remove();
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
