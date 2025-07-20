@@ -43,17 +43,17 @@ export const MovieDetail = async (req, res) => {
 
 export const MovieUpdate = async (req, res) => {
   try {
-    const result = await Movie.findOneAndUpdate(
+    const updatedMovie = await Movie.findOneAndUpdate(
       { _id: req.params.id },
       {
         title: req.body.title,
         desc: req.body.desc,
       },
       {
-        upsert: true,
+        new: true,
       }
     );
-    res.status(200).json(result);
+    res.status(200).json(updatedMovie);
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
