@@ -42,6 +42,8 @@ export const MovieDetail = async (req, res) => {
 };
 
 export const MovieUpdate = async (req, res) => {
+  await Movie.findOneAndUpdate({ _id: req.params.id });
+
   //Valoidate the user input
   if (req.body.title != null) {
     res.movie.title = req.body.title;
