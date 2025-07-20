@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 connectDB();
 
 app.get("/", (req, res) => {
-  res.json({ msg: "Hello Students!" });
+  res.json({ msg: "Api is working fine!" });
 });
 
 //CRUD functionality of movies
