@@ -50,7 +50,10 @@ export const MovieUpdate = async (req, res) => {
         desc: req.body.desc,
       }
     );
-  } catch (error) {}
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
 
   //Valoidate the user input
   if (req.body.title != null) {
